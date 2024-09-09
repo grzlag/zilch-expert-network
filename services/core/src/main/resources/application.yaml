@@ -1,0 +1,38 @@
+spring:
+  application.name: core
+  kafka:
+    bootstrap-servers: "localhost:9092"
+    producers:
+      payments-send-message:
+        topic-name: "processed-payments"
+    consumers:
+      group-id: "zen-core"
+      auto-offset-reset: "latest"
+      isolation-level: "read_committed"
+      users:
+        topic-name: "users"
+      payments:
+        topic-name: "payments"
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zen-core
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      pool-name: HikariCP
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
+    locations: classpath:db.migration
