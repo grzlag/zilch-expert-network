@@ -1,0 +1,16 @@
+spring:
+  application.name: messagesender
+  kafka:
+    bootstrap-servers: "localhost:9092"
+  consumers:
+    group-id: "zen-message-sender"
+    auto-offset-reset: "latest"
+    isolation-level: "read_committed"
+    payments-send-message:
+      topic-name: "processed-payments"
+
+global-management:
+  allowed-emails-property-name: enable-access
+
+server:
+  port: 8081
