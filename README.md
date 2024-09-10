@@ -18,8 +18,11 @@ More about ZEN vision and planned functionality can be found in [vision](documen
 # How to run?
 
 Use [environment.sh](environment.sh) to start database (for zen-core), kafka (shared for both services) and flagd (feature flags distributed system, global management).
+NOTE: Please ru script from the same directory as script
 
-Then please start (for example) from Intellij both Spring boot apps (zen-core[core](services/core) and [messagesender](services/messagesender))
+Then please start (for example from Intellij) both Spring boot apps (zen-core[core](services/core) and [messagesender](services/messagesender))
+
+You can then run [e2e tests](services/e2e/e2e-tests/src/test/java) to check if simple flow between zen-core and message sender services.
 
 # Message to reviewers
 
