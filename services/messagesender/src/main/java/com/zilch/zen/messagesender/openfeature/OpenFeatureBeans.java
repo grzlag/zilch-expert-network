@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class OpenFeatureBeans {
 
-// FIXME
     @Bean
     public OpenFeatureAPI openFeatureAPI() {
         final OpenFeatureAPI openFeatureAPI = OpenFeatureAPI.getInstance();

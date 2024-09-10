@@ -28,7 +28,6 @@ public class User {
         this.email = email;
     }
 
-    // Getters and Setters
     public String getId() {
         return id;
     }
